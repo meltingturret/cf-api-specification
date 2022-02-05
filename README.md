@@ -31,7 +31,7 @@ $ git clone https://github.com/cloudfoundry/cloud_controller_ng.git
 Run cfas to scan the source code:
 
 ```shell
-$ cfas --code "$HOME/workspace/api/cloud_controller_ng"
+$ ./bin/cfas --location ~/Projects/workspace/api/cloud_controller_ng
 ```
 
 ## Development

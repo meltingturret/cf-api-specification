@@ -23,12 +23,11 @@ Gem::Specification.new do |spec|
     "allowed_push_host" => "https://rubygems.org/"
   }
 
-  spec.files = Dir.glob("{bin,lib}/**/*", File::FNM_DOTMATCH, base: __dir__)
+  spec.files = Dir.glob("{bin,lib,api}/**/*", File::FNM_DOTMATCH, base: __dir__)
 
   spec.executables = ["cfas"]
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "robocop"
-  spec.add_development_dependency "yard"
 end

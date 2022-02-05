@@ -3,11 +3,14 @@
 
 require "bundler/setup"
 
-require_relative "../lib/cf/api/specification"
+require_relative "../lib/cf/api/cfas"
 
 begin
-  Cf::Api::Specification
+  api_output = "#{__dir__}/../api"
+  cfas = Cf::Api::Specification::Cfas
+  cfas.parse(ARGV)
+  cfas.walk(api_output)
 rescue StandardError => e
-  Console.logger.error(Cf::Api::Specification) { e }
+  puts "Error: #{e}"
   exit 1
 end
