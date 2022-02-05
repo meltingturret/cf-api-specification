@@ -1,9 +1,9 @@
-name: release-ruby
-
 on:
   push:
     branches:
       - main
+
+name: release-ruby
 jobs:
   release-please:
     runs-on: ubuntu-latest
