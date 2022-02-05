@@ -7,17 +7,20 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     name: Ruby ${{ matrix.ruby }}
+    env:
+      GEM_NAME: "cf-api-specification"
     strategy:
       matrix:
         ruby:
           - '2.7.4'
     steps:
       - uses: google-github-actions/release-please-action@v3
+        id: release
         with:
           release-type: ruby
-          package-name: cf-api-specification
+          package-name: ${{ env.GEM_NAME }}
           bump-minor-pre-major: true
-          version-file: "lib/cf/api/specification/version.rb"
+          version-file: "lib/${{ env.GEM_NAME }}/version.rb"
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
       - uses: ruby/setup-ruby@v1
@@ -27,12 +30,15 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: bundle install
         if: ${{ steps.release.outputs.release_created }}
-      - name: Push Ruby
+      - name: Release Gem
         run: |
+          gem install bundler
+          bundle config unset deployment
+          bundle install
           mkdir -p $HOME/.gem
           touch $HOME/.gem/credentials
           chmod 0600 $HOME/.gem/credentials
-          printf -- "---\n:rubygems_api_key: ${GEM_HOST_API_KEY}\n" > $HOME/.gem/credentials
+          printf -- "---\n:rubygems_api_key: ${RUBYGEMS_API_KEY}\n" > $HOME/.gem/credentials
           gem build *.gemspec
           gem push *.gem
         env:
