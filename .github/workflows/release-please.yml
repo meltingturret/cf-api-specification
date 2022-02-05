@@ -6,6 +6,11 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    name: Ruby ${{ matrix.ruby }}
+    strategy:
+      matrix:
+        ruby:
+          - '2.7.4'
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
@@ -17,7 +22,8 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.4
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
         if: ${{ steps.release.outputs.release_created }}
       - run: bundle install
         if: ${{ steps.release.outputs.release_created }}
