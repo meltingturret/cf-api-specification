@@ -1,9 +1,9 @@
+name: build-ruby
+
 on:
   push:
     branches:
       - main
-name: build-ruby
-
 jobs:
   build:
     runs-on: ubuntu-latest
