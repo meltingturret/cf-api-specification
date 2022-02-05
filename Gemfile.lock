@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cf-api-specification (0.1.0)
+    cf-api-specification (1.0.0)
 
 GEM
   remote: https://rubygems.org/
