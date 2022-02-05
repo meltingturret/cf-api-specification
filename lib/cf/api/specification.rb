@@ -2,8 +2,6 @@
 
 require "optparse"
 
-require_relative "specification/version"
-
 module Cf
   module Api
     # Namespace for classes and modules that handle generating openApi documents from Cloud Foundry API source.

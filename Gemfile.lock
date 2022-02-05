@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cf-api-specification (1.0.0-x86_64-linux)
+    cf-api-specification (1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -11,10 +11,13 @@ GEM
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
+    rack (2.2.3)
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.2.0)
     rexml (3.2.5)
+    robocop (0.1.1)
+      rack
     rubocop (1.25.1)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
@@ -38,10 +41,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bundler (~> 2.3)
+  bundler
   cf-api-specification!
   minitest (~> 5.0)
   rake (~> 13.0)
+  robocop
   rubocop (~> 1.25)
   rubocop-minitest (~> 0.17.1)
   rubocop-rake (~> 0.6.0)
