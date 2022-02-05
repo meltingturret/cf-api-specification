@@ -27,3 +27,6 @@ jobs:
         if: ${{ steps.release.outputs.release_created }}
       - run: bundle install
         if: ${{ steps.release.outputs.release_created }}
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
