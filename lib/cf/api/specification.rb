@@ -9,26 +9,27 @@ module Cf
     module Specification
       class Error < StandardError; end
 
-      options = { name: nil, age: nil }
+      params = {}
 
-      parser = OptionParser.new do |opts|
-        opts.banner = "Usage: specification [options]"
-        opts.on("-n", "--code code", "Location of source code") do |name|
-          options[:name] = name
+      OptionParser.new do |parser|
+        parser.banner = "Usage: cfas [options]"
+        parser.on("-c", "--code CODE", "Location of source code") do |code|
+          unless code.nil?
+            if Dir.exist?(code)
+              puts "Using location #{code}"
+              params[code] = code
+            else
+              puts "Unable to locate source code #{code}"
+              exit(1)
+            end
+          end
         end
-
-        if options[:name].nil?
-          print "Enter source code location: "
-          options[:name] = gets.chomp
-        end
-
-        opts.on("-h", "--help", "Displays Help") do
-          puts opts
+        parser.on("-v", "--verbose", "Detailed output")
+        parser.on("-h", "--help", "Help message") do
+          puts parser
           exit
         end
-      end
-
-      parser.parse!
+      end.parse!(into: params)
     end
   end
 end
