@@ -3,3 +3,5 @@
 git pull --rebase
 
 bundle exec rake
+
+git push
