@@ -10,16 +10,19 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Ruby gem to generate and provide OpenAPI Specification for Cloud Foundry API."
   spec.description = "Ruby gem to generate and provide OpenAPI Specification for Cloud Foundry API."
-  spec.homepage = "https://rubygems.org/gems/cf-api-specification"
+  spec.homepage = "https://github.com/meltingturret/cf-api-specification"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org/"
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/meltingturret/cf-api-specification"
-  spec.metadata["changelog_uri"] = "https://github.com/meltingturret/cf-api-specification/blob/main/CHANGELOG.md"
-
+  spec.metadata = {
+    "bug_tracker_uri" => "#{spec.homepage}/issues",
+    "changelog_uri" => "#{spec.homepage}/blob/main/CHANGELOG.md",
+    "documentation_uri" => spec.homepage.to_s,
+    "homepage_uri" => spec.homepage.to_s,
+    "source_code_uri" => spec.homepage.to_s
+  }
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
