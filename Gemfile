@@ -14,3 +14,5 @@ gem "rubocop", "~> 1.25"
 gem "rubocop-rake", "~> 0.6.0"
 
 gem "rubocop-minitest", "~> 0.17.1"
+
+gem "yard", "~> 0.8.7.6"
