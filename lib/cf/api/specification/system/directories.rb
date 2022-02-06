@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'erb'
+require "erb"
 
 module Cf
   module Api
@@ -20,19 +20,21 @@ module Cf
             file_path = File.join(api_output, path)
             Dir.mkdir(file_path) unless File.directory?(file_path)
             operations = Dir.entries(File.join(@location, item)) - %w[. .. _header.md _object.md.erb]
-            operations.each do |erb|
-              unless erb.nil?
-                op = erb.sub!(".md.erb", "")
-                unless op.nil?
-                  use_case = op.gsub("_", "-").sub("-", "")
-                  use_case_yml = File.join(path, use_case) + ".yml"
-                  puts "Updating: #{use_case_yml}"
-                  yml_data = ERB.new(File.read("#{Dir.pwd}/templates/OpenAPI-Specification.yml.erb"), nil, '-').result(binding)
-                  File.open(File.join(api_output, use_case_yml), 'w') { |f| f.write yml_data }
-                end
-              end
+            operations.each do |resource_file|
+              template(api_output, path, resource_file) unless resource_file.nil?
             end
           end
+        end
+
+        def template(api_output, path, resource_file)
+          op = resource_file.sub!(".md.erb", "")
+          begin
+            use_case = op.gsub("_", "-").sub("-", "")
+            use_case_yml = "#{File.join(path, use_case)}.yml"
+            puts "Updating: #{use_case_yml}"
+            yml_data = ERB.new(File.read("#{Dir.pwd}/templates/OpenAPI-Specification.yml.erb"), trim_mode: "-").result(binding)
+            File.open(File.join(api_output, use_case_yml), "w") { |f| f.write yml_data }
+          end unless op.nil?
         end
       end
     end
