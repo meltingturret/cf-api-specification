@@ -32,8 +32,8 @@ module Cf
           end.parse(args)
         end
 
-        def self.walk(api_output)
-          Api::Specification::Directories.new(@location).walk(api_output)
+        def self.walk(api_config, api_output)
+          Api::Specification::Directories.new(api_config, @location).walk(api_output)
         end
       end
     end
