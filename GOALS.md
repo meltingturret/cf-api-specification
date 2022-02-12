@@ -20,7 +20,9 @@ such as [JPROC](https://github.com/fleipold/jproc) which would work fine but the
 possibly add the binary to our package and calling the command shell might not be as reliable as a
 simple REST API call from for exammple SpringBoot webclient.
 
-Another option would be to put a [REST API written in golang](https://nordicapis.com/7-frameworks-to-build-a-rest-api-in-go/) in front of the CF CLI. 
+Another option would be to put a 
+[REST API written in golang](https://nordicapis.com/7-frameworks-to-build-a-rest-api-in-go/) in front of the CF 
+CLI. There is also a [golang client module available](https://github.com/cloudfoundry-community/go-cfclient).  
 
 ## References
 * [CF CLI](https://github.com/cloudfoundry/cli)
