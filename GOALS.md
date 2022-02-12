@@ -22,7 +22,10 @@ simple REST API call from for exammple SpringBoot webclient.
 
 Another option would be to put a 
 [REST API written in golang](https://nordicapis.com/7-frameworks-to-build-a-rest-api-in-go/) in front of the CF 
-CLI. There is also a [golang client module available](https://github.com/cloudfoundry-community/go-cfclient).  
+CLI. There is also a [golang client module available](https://github.com/cloudfoundry-community/go-cfclient). To support
+this option there is also an [OpenAPI Generator for golang](https://openapi-generator.tech/docs/usage/).
+
+
 
 ## References
 * [CF CLI](https://github.com/cloudfoundry/cli)
