@@ -1,24 +1,9 @@
 # Cf::Api::Specification
 
-Ruby gem to generate and provide OpenAPI Specification for Cloud Foundry API. This package will generate an openapi.yml
-document from basic CRUD like operations that are mined from the cloud foundry cloud controllers V3 API documentation. 
+Ruby gem to provide OpenAPI Specification document for basic application hosting CRUD and management operations that 
+when implemented can interact with Cloud Foundry PAAS either PCF, CFAR or K8S. 
 
-It is intended that the final modified openapi.yml can be used to support CRUD, and management,  like operations for 
-organisations, spaces, applications , policies and routes. It is assumed that the target cloud foundry installation 
-has all the required users, roles and quotas already configured.
-
-One main objective is to provide a easy to use API that is an abstraction inorder to maintain a stable structure for the 
-consumer of this specification even when the backend cloud controller API is modified. There are some complexities with 
-the full API from cloud foundry that should be handled(hidden) by the client implementation.
-
-1. Where are the network policy resources? This will have to be added in to the final openAPI document.
-2. Simple easy to use response models. 
-3. Simple use of organisation and spaces names for parameters, no exposure of the relations that we see currently.
-4. Avoid going into the cloud controllers API rabbit hole!
-
-The output documents are located under api where `openapi-generated.yml` is the generated prototype (do this once) 
-and `cloud-foundry-crud-v3-openapi.yml` is the final modified version.
-
+The project [GOALS](GOALS.md) are detailed separately.
 
 [![build-ruby](https://github.com/meltingturret/cf-api-specification/actions/workflows/build-ruby.yml/badge.svg)](https://github.com/meltingturret/cf-api-specification/actions/workflows/build-ruby.yml)
 [![release-please](https://github.com/meltingturret/cf-api-specification/actions/workflows/release-please.yml/badge.svg)](https://github.com/meltingturret/cf-api-specification/actions/workflows/release-please.yml)
