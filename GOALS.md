@@ -10,7 +10,8 @@ management features such as start, stop and restage. It is assumed that the targ
 has the required users, quotas and roles configured.
 2. Must include management of organisations and spaces.
 3. Must include http route management.
-4. Must also include network policy management.
+4. Must include network policy management.
+5. Must handle UAA tokens.
 
 ## Implementation
 
