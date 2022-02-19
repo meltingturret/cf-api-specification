@@ -26,16 +26,16 @@ Or install it yourself as:
 
 ## Usage
 
-Clone cloud_controller_ng source code:
+Clone cf cli golang source code:
 
 ```shell
-$ git clone https://github.com/cloudfoundry/cloud_controller_ng.git
+$ git clone https://github.com/cloudfoundry/cli.git
 ```
 
 Run cfas to scan the source code:
 
 ```shell
-$ ./bin/cfas --location ~/Projects/workspace/api/cloud_controller_ng
+$ ./bin/cfas --location ~/Projects/workspace/api/cli
 ```
 
 ## Development

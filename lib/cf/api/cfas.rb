@@ -16,8 +16,8 @@ module Cf
             parser.on("-L", "--location LOCATION", "Location of source code") do |location|
               unless location.nil?
                 if Dir.exist?(location)
-                  resource_location = "#{location}/docs/v3/source/includes/resources"
-                  puts "Using API resource location #{resource_location}"
+                  resource_location = "#{location}/resources"
+                  puts "Resources: #{resource_location}"
                   @location = resource_location
                 else
                   puts "Unable to locate source code #{location}"
