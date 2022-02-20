@@ -13,7 +13,7 @@ The project [GOALS](GOALS.md) are detailed separately.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cf-api-specification'
+gem 'cf-generated-specification'
 ```
 
 And then execute:
@@ -35,7 +35,7 @@ $ git clone https://github.com/cloudfoundry/cli.git
 Run cfas to scan the source code:
 
 ```shell
-$ ./bin/cfas --location ~/Projects/workspace/api/cli
+$ ./bin/cfas --location ~/Projects/workspace/generated/cli
 ```
 
 ## Development

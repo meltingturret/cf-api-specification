@@ -1,0 +1,3 @@
+---
+  resource: task_resource.go
+  feature: task.go

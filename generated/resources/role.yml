@@ -1,0 +1,3 @@
+---
+  resource: role_resource.go
+  feature: role.go

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cf-api-specification (1.0.0)
+    cf-generated-specification (1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -42,7 +42,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
-  cf-api-specification!
+  cf-generated-specification!
   minitest (~> 5.0)
   rake (~> 13.0)
   robocop

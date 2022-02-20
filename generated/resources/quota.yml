@@ -1,0 +1,3 @@
+---
+  resource: quota_resource.go
+  feature: quota.go

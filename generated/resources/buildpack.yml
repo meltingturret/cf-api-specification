@@ -1,0 +1,3 @@
+---
+  resource: buildpack_resource.go
+  feature: buildpack.go

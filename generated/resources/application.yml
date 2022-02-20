@@ -1,0 +1,3 @@
+---
+  resource: application_resource.go
+  feature: application.go

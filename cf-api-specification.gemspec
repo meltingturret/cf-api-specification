@@ -3,14 +3,14 @@
 require_relative "lib/cf/api/specification/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "cf-api-specification"
+  spec.name = "cf-generated-specification"
   spec.version = Cf::Api::Specification::VERSION
   spec.authors = ["meltingturret"]
   spec.email = ["meltingturret@gmail.com"]
 
   spec.summary = "Ruby gem to generate and provide OpenAPI Specification for Cloud Foundry API."
   spec.description = "Ruby gem to generate and provide OpenAPI Specification for Cloud Foundry API."
-  spec.homepage = "https://github.com/meltingturret/cf-api-specification"
+  spec.homepage = "https://github.com/meltingturret/cf-generated-specification"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
 
@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
     "allowed_push_host" => "https://rubygems.org/"
   }
 
-  spec.files = Dir.glob("{bin,lib,api}/**/*", File::FNM_DOTMATCH, base: __dir__)
+  spec.files = Dir.glob("{bin,lib,generated}/**/*", File::FNM_DOTMATCH, base: __dir__)
 
   spec.executables = ["cfas"]
 

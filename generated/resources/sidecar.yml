@@ -1,0 +1,3 @@
+---
+  resource: sidecar_resource.go
+  feature: sidecar.go

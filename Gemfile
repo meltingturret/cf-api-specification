@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in cf-api-specification.gemspec
+# Specify your gem's dependencies in cf-generated-specification.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

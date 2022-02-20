@@ -2,8 +2,12 @@
 directory_excludes:
   - .
   - ..
+  - build_resource.go
   - route_binding.go
   - relationship_resource.go
+  - deployment_resource.go
+  - droplet_resource.go
+  - package_resource.go
 operations_excludes:
   - .
   - ..

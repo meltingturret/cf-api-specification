@@ -16,9 +16,8 @@ module Cf
             parser.on("-L", "--location LOCATION", "Location of source code") do |location|
               unless location.nil?
                 if Dir.exist?(location)
-                  resource_location = "#{location}/resources"
-                  puts "Resources: #{resource_location}"
-                  @location = resource_location
+                  puts "Location: #{location}"
+                  @location = location
                 else
                   puts "Unable to locate source code #{location}"
                   exit(1)
@@ -32,8 +31,9 @@ module Cf
           end.parse(args)
         end
 
-        def self.walk(api_config, api_output)
-          Api::Specification::Directories.new(api_config, @location).walk(api_output)
+        def self.build(config, generated)
+          Api::Specification::Resources.new(config, generated, @location).walk
+          Api::Specification::Enumerate.new(config, generated, @location).to_api_paths("application.go")
         end
       end
     end

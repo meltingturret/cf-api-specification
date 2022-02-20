@@ -1,0 +1,3 @@
+---
+  resource: stack_resource.go
+  feature: stack.go

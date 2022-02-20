@@ -6,11 +6,11 @@ require "bundler/setup"
 require_relative "../lib/cf/api/cfas"
 
 begin
-  api_config = "#{__dir__}/../config"
-  api_output = "#{__dir__}/../api"
+  config = "#{__dir__}/../config"
+  generated = "#{__dir__}/../generated"
   cfas = Cf::Api::Specification::Cfas
   cfas.parse(ARGV)
-  cfas.walk(api_config, api_output)
+  cfas.build(config, generated)
 rescue StandardError => e
   puts "Error: #{e}"
   exit 1

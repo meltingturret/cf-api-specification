@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Ruby ${{ matrix.ruby }}
     env:
-      GEM_NAME: "cf-api-specification"
+      GEM_NAME: "cf-generated-specification"
     strategy:
       matrix:
         ruby:
