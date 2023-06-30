@@ -38,6 +38,19 @@ Run cfas to scan the source code:
 $ ./bin/cfas --location ~/Projects/workspace/generated/cli
 ```
 
+
+```plantuml
+@startuml
+  class Example {
+    - String name
+    - int number 
+    
+    +void getName()
+    +void getNumber()
+    +String toString()
+  }
+@enduml
+```
 ## Development
 
 To setup local gem install add this to your ~/.bashrc:
